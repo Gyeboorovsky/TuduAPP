@@ -1,0 +1,17 @@
+﻿@page "/register"
+@using TuduAPI.Models
+@inherits RegisterBase
+
+<h3>Register</h3>
+
+<input type="text" @bind="@username" @oninput="@((e) => { username=(string)e.Value;})" placeholder="username" />
+<input type="text" @bind="@password" @oninput="@((e) => { password=(string)e.Value;})" placeholder="password" />
+<input type="text" @bind="@email" @oninput="@((e) => { email=(string)e.Value;})" placeholder="email" />
+@*<button @onclick="() => AddUser(username, password, email)">Add</button>*@
+<input @onclick="() => AddUser(username, password, email)" type="button" value="Add" />
+
+@code {
+    string username;
+    string password;
+    string email;
+}

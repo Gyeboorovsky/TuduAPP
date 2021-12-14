@@ -1,0 +1,20 @@
+﻿@page "/login"
+@inherits LoginBase;
+
+@if (Username == null)
+{
+    <h3>Login </h3>
+}
+else
+{
+    <h3>Logged in as @Username</h3>
+}
+
+<input type="text" @bind="@username" @oninput="@((e) => { username=(string)e.Value;})" placeholder="username" />
+<input type="text" @bind="@password" @oninput="@((e) => { password=(string)e.Value;})" placeholder="password" />
+
+<input @onclick="() => GetUsername(username, password)" type="button" value="Add" />
+@code {
+    string username;
+    string password;
+}

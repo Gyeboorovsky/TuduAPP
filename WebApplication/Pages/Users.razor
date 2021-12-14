@@ -1,0 +1,38 @@
+﻿@page "/users"
+@using TuduAPI.Models
+@inherits UsersBase
+
+
+<h1>Users</h1>
+
+@if (Users == null)
+{
+    <h2>Loading...</h2>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usernam</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Enter Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (User user in Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Username</td>
+                    <td>@user.Password</td>
+                    <td>@user.Email</td>
+                    <td>@user.EnterDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
